@@ -1,0 +1,34 @@
+name: detr-env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.11
+  - pip
+  # Deep Learning Stack (Optimized for RTX 4060 / CUDA 12.1+)
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  # Essential Scientific & Detection Libraries
+  - scipy
+  - numpy
+  - matplotlib
+  - tqdm
+  # Research & Config Management
+  - hydra-core
+  - omegaconf
+  # Evaluation & Data Management
+  - pycocotools
+  # Deployment & Performance
+  - onnx
+  - onnxruntime-gpu
+  # Pip specific installs for more niche/recent packages
+  - pip:
+      - wandb          # Gold Standard untuk logging eksperimen PhD
+      - opencv-python  # Ditambahkan kembali untuk fungsi I/O gambar
+      - termcolor      # Untuk logging terminal yang lebih rapi
+      - panopticapi    # Jika riset berkembang ke panoptic segmentation
+      - albumentations # Disertakan untuk augmentasi data tanaman yang tangguh

@@ -1,0 +1,45 @@
+# --- IDE / OS ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# --- Python Environment ---
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+.python-version
+.pytest_cache/
+.tox/
+
+# --- Riset & Eksperimen (Dikelola dengan Strategi) ---
+# Jangan abaikan folder data, tapi abaikan konten spesifiknya
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Abaikan checkpoint lokal, simpan hanya model final terbaik
+checkpoints/*.pth
+!checkpoints/best_model.pth
+
+# Log eksperimen seringkali disimpan di cloud (WandB/TensorBoard), abaikan lokal
+wandb/
+runs/
+logs/
+
+# --- Deployment Artifacts ---
+# Model biner yang siap pakai boleh diabaikan, 
+# karena harus bisa di-*rebuild* dari source code dan checkpoint.
+*.onnx
+*.engine
+*.tflite
+
+# --- Dokumentasi & Riset ---
+# Abaikan file hasil kompilasi LaTeX/Markdown jika ada
+*.aux
+*.log
+*.out
+*.pdf
